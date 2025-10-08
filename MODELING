@@ -1,0 +1,26 @@
+User
+- id
+- name
+- email
+- password
+- type[Director | Coordinator | Teacher | Student]
+
+Class
+- id
+- UserId[where type = Teacher]
+- Name
+
+StudentAtClass
+- id
+- UserId[where type = Student]
+- ClassId
+- Active
+
+ClassTest
+- id
+- StudentAtClassId
+- score
+
+- [ ] Dá pra implementar um sistema de Faltas criando um sistema de aula, que vai pegar o StudentAtClass
+- [ ] Dá pra criar um sistema de boletim
+- [ ] Dá pra criar um sistema do Coordinator mover o Professor de Class
