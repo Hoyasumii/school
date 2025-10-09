@@ -1,8 +1,6 @@
 namespace Domain.User.Enums;
 
-
-
-public enum UserTypes
+public enum UserType
 {
   Director,
   Coordinator,

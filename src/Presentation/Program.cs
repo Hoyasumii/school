@@ -1,4 +1,5 @@
 ﻿using Domain.User.Validators;
+using FluentValidation.Validators;
 
 namespace Presentation;
 
@@ -6,12 +7,12 @@ public class Program
 {
   public static void Main(string[] args)
   {
-    Console.WriteLine("Hello World");
+    var userType = "Teacher";
 
-    var email = new EmailValidator();
+    var validation = new UserTypeValidator();
 
-    var myEmail = email.Validate("alanreisanjo@gmail.com");
+    var a = validation.Validate(userType);
 
-    Console.WriteLine(myEmail.IsValid);
+    System.Console.WriteLine(a.IsValid);
   }
 }

@@ -4,6 +4,7 @@ User
 - email
 - password
 - type[Director | Coordinator | Teacher | Student]
+- address
 
 Class
 - id

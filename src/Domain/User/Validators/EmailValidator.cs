@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Domain.User.Validators;
 
-public sealed class EmailValidator : AbstractValidator<string>
+internal sealed class EmailValidator : AbstractValidator<string>
 {
   public EmailValidator()
   {
