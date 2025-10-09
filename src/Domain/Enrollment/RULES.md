@@ -1,0 +1,2 @@
+- [ ] Apenas Diretores e Coordenadores podem Vincular um aluno na matéria
+- [ ] Apenas Diretores e Coordenadores podem Desvincular um aluno da matéria

@@ -1,0 +1,10 @@
+- [ ] Apenas Diretores podem alterar o UserType(e não pode alterar o status de Student)
+- [ ] Apenas Diretores e Coordenadores podem remover alunos e professores
+- [ ] Apenas Diretores e Coordenadores podem adicionar usuários
+- [ ] Um professor não pode virar um aluno
+- [ ] Um aluno não pode virar um professor
+- [ ] Se o Diretor alterar o UserType de algum usuário para Diretor, ele perderá o UserType para Coordenador
+- [ ] Diretores podem remover Coordenadores
+- [ ] Coordenadores não podem remover Diretores
+- [ ] Diretores, Coordenadores e professores podem buscar dados dos alunos
+- [ ] Apenas Diretores e Coordenadores podem alterar os dados dos Professores e dos Alunos
