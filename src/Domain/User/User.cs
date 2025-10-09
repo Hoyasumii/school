@@ -12,4 +12,3 @@ public sealed class User : Entity
   public required UserType Type { get; init; }
   public required Address Address { get; init; }
 }
-
