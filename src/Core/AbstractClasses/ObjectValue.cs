@@ -4,7 +4,7 @@ namespace Core.AbstractClasses;
 
 public abstract class ObjectValue<TValue>
 {
-  private TValue RawValue { get; set; }
+  protected TValue RawValue { get; set; }
   public TValue Value { get => RawValue; set => Set(value); }
   protected abstract AbstractValidator<TValue> Schema { get; }
 
@@ -14,7 +14,7 @@ public abstract class ObjectValue<TValue>
     Set(initialValue);
   }
 
-  private void Set(TValue value)
+  protected virtual void Set(TValue value)
   {
     var isNewValueIsValid = Schema.Validate(value).IsValid;
 

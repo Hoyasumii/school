@@ -1,15 +1,23 @@
 using Core.AbstractClasses;
+using Core.Interfaces;
 using Domain.User.Validators;
 using FluentValidation;
 
 namespace Domain.User.ObjectValues;
 
-public sealed class Password(string password) : ObjectValue<string>(password)
+public sealed class Password(IHashing hashing, string password) : ObjectValue<string>(password)
 {
   protected override AbstractValidator<string> Schema { get; } = new PasswordValidator();
+  private IHashing Hashing { get; } = hashing;
 
-  public static Password Make(string password)
+  public static Password Make(IHashing crypto, string password)
   {
-    return new(password);
+    return new(crypto, password);
+  }
+
+  protected override void Set(string value)
+  {
+    base.Set(value);
+    RawValue = Hashing.Hash(value); 
   }
 }
