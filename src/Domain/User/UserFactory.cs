@@ -16,7 +16,7 @@ public static class UserFactory
       Address = Address.Make(data.Address),
       Name = Name.Make(data.Name),
       BirthDate = data.BirthDate,
-      CreatedBy = GuidOV.Make(data.CreatedBy),
+      CreatedBy = GuidVO.Make(data.CreatedBy),
       Type = UserType.Make(data.Type)
     };
   }

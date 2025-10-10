@@ -5,14 +5,13 @@ namespace Domain.Subject;
 
 public static class SubjectFactory
 {
-  public static Subject Make(SubjectDTO data)
+  public static Subject Make(SubjectDTO data, string? id, DateTime? createdAt)
   {
-    return new()
+    return new(id, createdAt)
     {
-      Code = DefinedString.Make(data.Code),
       Description = DefinedString.Make(data.Description),
       Name = DefinedString.Make(data.Name),
-      TeacherId = GuidOV.Make(data.TeacherId)
+      CreatedBy = GuidVO.Make(data.CreatedBy)
     };
   }
 }

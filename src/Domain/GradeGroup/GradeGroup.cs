@@ -5,6 +5,6 @@ namespace Domain.GradeGroup;
 
 public sealed class GradeGroup : Entity
 {
-  public required GuidOV SubjectId { get; init; }
+  public required GuidVO SubjectId { get; init; }
   public required DefinedString Name { get; init; }
 }
