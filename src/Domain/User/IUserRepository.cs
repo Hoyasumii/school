@@ -5,7 +5,7 @@ namespace Domain.User;
 
 public interface IUserRepository
 {
-  public User? Create(CreateUserDTO content);
+  public User? Create(UserDTO content);
   public User? FindById(string targetId);
   public User? FindByEmail(string targetEmail);
   public List<User> FindByType(UserType type);

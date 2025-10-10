@@ -7,14 +7,16 @@ namespace Domain.User;
 
 public static class UserFactory
 {
-  public static User Make(IHashing hashing, CreateUserDTO data)
+  public static User Make(IHashing hashing, UserDTO data, string? id, DateTime? createdAt)
   {
-    return new User()
+    return new User(id, createdAt)
     {
       Email = Email.Make(data.Email),
       Password = Password.Make(hashing, data.Password),
       Address = Address.Make(data.Address),
-      Name = DefinedString.Make(data.Name),
+      Name = Name.Make(data.Name),
+      BirthDate = data.BirthDate,
+      CreatedBy = GuidOV.Make(data.CreatedBy),
       Type = UserType.Make(data.Type)
     };
   }
