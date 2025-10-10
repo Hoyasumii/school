@@ -2,20 +2,16 @@ using Domain.User.Enums;
 
 namespace Domain.User.Services;
 
-public sealed class ChangeUserType(IUserRepository repository)
+public sealed class ChangeUserType
 {
-  private IUserRepository Repository { get; } = repository;
-
-  public async Task<User[]> Run(User actor, string targetId, UserType desiredType)
+  public static User[] Run(User actor, User user, UserType desiredType)
   {
-    var targetUser = await Repository.FindById(targetId) ?? throw new Exception();
-
     if (desiredType == UserType.Director)
       actor.Type.Value = UserType.Coordinator;
 
-    targetUser.Type.Value = desiredType;
+    user.Type.Value = desiredType;
 
-    return [actor, targetUser];
+    return [actor, user];
   }
 }
 

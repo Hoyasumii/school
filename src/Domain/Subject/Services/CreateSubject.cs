@@ -9,12 +9,9 @@ public sealed class CreateSubject(IUserRepository userRepository)
 
   public async Task<Subject> Run(SubjectDTO data)
   {
-    var targetCoordinator = await UserRepository.FindById(data.CreatedBy)
-                            ?? throw new Exception();
-
-    if (targetCoordinator.Type.Value != User.Enums.UserType.Coordinator)
-      throw new Exception();
+    _ = await UserRepository.FindById(data.CreatedBy) ?? throw new Exception();
 
     return SubjectFactory.Make(data);
   }
 }
+// TODO: Apenas Coordenadores podem fazer isso

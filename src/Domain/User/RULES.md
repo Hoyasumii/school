@@ -5,3 +5,4 @@
 - [x] Um aluno não pode virar um professor
 - [x] Se o Diretor alterar o UserType de algum usuário para Diretor, ele perderá o UserType para Coordenador
 - [ ] Diretores, Coordenadores e professores podem buscar dados dos alunos
+// TODO Na camada de aplicação eu vou validar quem está requisitando a remoção. Nesse caso, apenas DIRETORES podem remover alunos

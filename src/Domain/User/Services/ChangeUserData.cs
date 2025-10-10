@@ -8,12 +8,10 @@ public sealed class ChangeUserData(IUserRepository repository)
 {
   private IUserRepository Repository { get; } = repository;
 
-  public async Task<User> Run(IHashing hashing, string userId, UpdateUserDTO data)
+  public async Task<User> Run(IHashing hashing, User user, UpdateUserDTO data)
   {
-    var targetUser = await Repository.FindById(userId) ?? throw new Exception();
-
     if (data.Address is not null)
-      targetUser.Address = Address.Make(data.Address);
+      user.Address = Address.Make(data.Address);
 
     if (data.Email is not null)
     {
@@ -21,12 +19,12 @@ public sealed class ChangeUserData(IUserRepository repository)
 
       if (emailExists) throw new Exception();
 
-      targetUser.Email = Email.Make(data.Email);
+      user.Email = Email.Make(data.Email);
     }
 
     if (data.Password is not null)
-      targetUser.Password = Password.Make(hashing, data.Password);
+      user.Password = Password.Make(hashing, data.Password);
 
-    return targetUser;
+    return user;
   } 
 }
