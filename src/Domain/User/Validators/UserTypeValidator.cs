@@ -3,10 +3,10 @@ using FluentValidation;
 
 namespace Domain.User.Validators;
 
-public class UserTypeValidator : AbstractValidator<string>
+public class UserTypeValidator : AbstractValidator<UserType>
 {
   public UserTypeValidator()
   {
-    RuleFor(obj => obj).IsEnumName(typeof(UserType));
+    RuleFor(obj => obj).IsInEnum();
   }
 }

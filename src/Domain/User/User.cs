@@ -6,11 +6,11 @@ namespace Domain.User;
 
 public sealed class User(string? id, DateTime? createdAt) : Entity(id, createdAt)
 {
-  public required Name Name { get; init; }
-  public required GuidVO CreatedBy { get; init; }
+  public required Name Name { get; set; }
+  public required GuidVO CreatedBy { get; set; }
   public required DateTime BirthDate { get; init; }
-  public required Email Email { get; init; }
-  public required Password Password { get; init; }
-  public required UserType Type { get; init; }
-  public required Address Address { get; init; }
+  public required Email Email { get; set; }
+  public required Password Password { get; set; }
+  public required UserType Type { get; set; }
+  public required Address Address { get; set; }
 }

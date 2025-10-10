@@ -4,12 +4,16 @@ using FluentValidation;
 
 namespace Domain.User.ValueObjects;
 
-public sealed class UserType(string initialValue) : ValueObject<string>(initialValue)
+public sealed class UserType(Enums.UserType initialValue) : ValueObject<Enums.UserType>(initialValue)
 {
-  protected override AbstractValidator<string> Schema { get; } = new UserTypeValidator();
+  protected override AbstractValidator<Enums.UserType> Schema { get; } = new UserTypeValidator();
 
   public static UserType Make(string initialValue)
   {
-    return new(initialValue);
+    var userTypeIsValid = Enum.TryParse(initialValue, out Enums.UserType userType);
+
+    if (!userTypeIsValid) throw new Exception();
+
+    return new(userType);
   }
 }

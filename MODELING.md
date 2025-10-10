@@ -1,5 +1,6 @@
 @c -> customizable
 @d -> default
+@u -> unique
 
 @UserType
 - Student
@@ -13,7 +14,7 @@ User
 - firstName@string[DefinedString]
 - lastName@string[DefinedString]
 - birthDate@date[DateTime]
-- email@string[Email]@c
+- email@string[Email]@c@u
 - password@string[Password]@c
 - type@string[UserType]([IF:User.Length=0_THEN:type=Director])@c
 - address@Address@c
