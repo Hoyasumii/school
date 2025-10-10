@@ -9,7 +9,7 @@ public interface IUserRepository
   public Task<User?> FindById(string targetId);
   public Task<User?> FindByEmail(string targetEmail);
   public Task<List<User>> FindByType(UserType type);
-  public Task<User?> Remove(string userId);
+  public Task<bool> Remove(User user);
   public Task<bool> EmailExists(string email);
   public Task<bool> HasRegistry();
 }

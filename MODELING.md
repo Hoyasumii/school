@@ -67,3 +67,4 @@ MateriaisDisciplinares
 - referências@array->string[Array<Link>]
 
 - [ ] Adicionar um sistema de faltas
+- [ ] Adicionar um sistema de notificação para Usuários
