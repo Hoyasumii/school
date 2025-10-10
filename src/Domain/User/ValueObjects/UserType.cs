@@ -2,9 +2,9 @@ using Core.AbstractClasses;
 using Domain.User.Validators;
 using FluentValidation;
 
-namespace Domain.User.ObjectValues;
+namespace Domain.User.ValueObjects;
 
-public sealed class UserType(string initialValue) : ObjectValue<string>(initialValue)
+public sealed class UserType(string initialValue) : ValueObject<string>(initialValue)
 {
   protected override AbstractValidator<string> Schema { get; } = new UserTypeValidator();
 

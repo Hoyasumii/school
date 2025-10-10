@@ -5,11 +5,11 @@ namespace Domain.User;
 
 public interface IUserRepository
 {
-  public User? Create(UserDTO content);
-  public User? FindById(string targetId);
-  public User? FindByEmail(string targetEmail);
-  public List<User> FindByType(UserType type);
-  public User? UpdateById(string userId, UpdateUserDTO data);
-  public bool? ChangeUserType(string userId, UserType type);
-  public User? Remove(string userId);
+  public Task<User?> Create(UserDTO content);
+  public Task<User?> FindById(string targetId);
+  public Task<User?> FindByEmail(string targetEmail);
+  public Task<List<User>> FindByType(UserType type);
+  public Task<User?> UpdateById(string userId, UpdateUserDTO data);
+  public Task<bool?> ChangeUserType(string userId, UserType type);
+  public Task<User?> Remove(string userId);
 }

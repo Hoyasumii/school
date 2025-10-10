@@ -2,13 +2,13 @@ using FluentValidation;
 
 namespace Core.AbstractClasses;
 
-public abstract class ObjectValue<TValue>
+public abstract class ValueObject<TValue>
 {
   protected TValue RawValue { get; set; }
   public TValue Value { get => RawValue; set => Set(value); }
   protected abstract AbstractValidator<TValue> Schema { get; }
 
-  public ObjectValue(TValue initialValue)
+  public ValueObject(TValue initialValue)
   {
     RawValue = initialValue;
     Set(initialValue);

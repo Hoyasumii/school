@@ -1,5 +1,5 @@
 using Core.Interfaces;
-using Core.ObjectValues;
+using Core.ValueObjects;
 
 namespace Core.AbstractClasses;
 

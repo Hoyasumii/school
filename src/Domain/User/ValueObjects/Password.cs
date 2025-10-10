@@ -3,9 +3,9 @@ using Core.Interfaces;
 using Domain.User.Validators;
 using FluentValidation;
 
-namespace Domain.User.ObjectValues;
+namespace Domain.User.ValueObjects;
 
-public sealed class Password(IHashing hashing, string password) : ObjectValue<string>(password)
+public sealed class Password(IHashing hashing, string password) : ValueObject<string>(password)
 {
   protected override AbstractValidator<string> Schema { get; } = new PasswordValidator();
   private IHashing Hashing { get; } = hashing;

@@ -4,9 +4,9 @@ using Domain.User.Dtos;
 using Domain.User.Validators;
 using FluentValidation;
 
-namespace Domain.User.ObjectValues;
+namespace Domain.User.ValueObjects;
 
-public sealed class Name(NameDTO name) : ObjectValue<NameDTO>(name), IDisplayableObjectValue
+public sealed class Name(NameDTO name) : ValueObject<NameDTO>(name), IDisplayableValueObject
 {
   protected override AbstractValidator<NameDTO> Schema { get; } = new NameValidator();
 

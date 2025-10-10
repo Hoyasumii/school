@@ -1,6 +1,6 @@
 namespace Core.Interfaces;
 
-public interface IDisplayableObjectValue
+public interface IDisplayableValueObject
 {
   public string ToString();
 }

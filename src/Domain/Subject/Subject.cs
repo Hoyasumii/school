@@ -1,5 +1,5 @@
 using Core.AbstractClasses;
-using Core.ObjectValues;
+using Core.ValueObjects;
 
 namespace Domain.Subject;
 

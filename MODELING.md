@@ -32,7 +32,7 @@ Class
 - name@string[DefinedString]@c
 - academicYear@int[Year]@c
 - semester@int[Semester]@c
-- active@boolean@d->true
+- active@boolean@c@d->true
 
 StudentEnrollment
 - id@uuid[GuidVO]

@@ -2,9 +2,9 @@ using Core.AbstractClasses;
 using Core.Validators;
 using FluentValidation;
 
-namespace Core.ObjectValues;
+namespace Core.ValueObjects;
 
-public sealed class DefinedString(string value) : ObjectValue<string>(value)
+public sealed class DefinedString(string value) : ValueObject<string>(value)
 {
   protected override AbstractValidator<string> Schema { get; } = new DefinedStringValidator();
 

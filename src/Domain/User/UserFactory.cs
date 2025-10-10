@@ -1,13 +1,13 @@
 using Core.Interfaces;
-using Core.ObjectValues;
+using Core.ValueObjects;
 using Domain.User.Dtos;
-using Domain.User.ObjectValues;
+using Domain.User.ValueObjects;
 
 namespace Domain.User;
 
 public static class UserFactory
 {
-  public static User Make(IHashing hashing, UserDTO data, string? id, DateTime? createdAt)
+  public static User Make(IHashing hashing, UserDTO data, string? id = null, DateTime? createdAt = null)
   {
     return new User(id, createdAt)
     {

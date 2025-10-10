@@ -1,10 +1,10 @@
 using Core.AbstractClasses;
-using Core.ObjectValues;
-using Domain.User.ObjectValues;
+using Core.ValueObjects;
+using Domain.User.ValueObjects;
 
 namespace Domain.User;
 
-public sealed class User(string? id = null, DateTime? createdAt = null) : Entity(id, createdAt)
+public sealed class User(string? id, DateTime? createdAt) : Entity(id, createdAt)
 {
   public required Name Name { get; init; }
   public required GuidVO CreatedBy { get; init; }

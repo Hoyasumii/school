@@ -4,8 +4,8 @@ namespace Domain.Subject;
 
 public interface ISubjectRepository
 {
-  public Subject? Create(SubjectDTO value);
-  public Subject? FindById(string subjectId);
-  public Subject? UpdateById(string subjectId, UpdateSubjectDTO data);
-  public Subject? RemoveById(string subjectId);
+  public Task<Subject?> Create(SubjectDTO value);
+  public Task<Subject?> FindById(string subjectId);
+  public Task<Subject?> UpdateById(string subjectId, UpdateSubjectDTO data);
+  public Task<Subject?> RemoveById(string subjectId);
 }

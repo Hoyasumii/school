@@ -1,4 +1,0 @@
-- [ ] Apenas Coordenadores e Diretores podem Criar uma Unidade
-- [ ] Apenas Coordenadores e Diretores podem Alterar uma Unidade
-- [ ] Apenas Coordenadores e Diretores podem Remover uma Unidade
-- [ ] Todos os Alunos que pertençam a esse SubjectId(por meio do EnrollmentId), professores, coordenadores e diretores podem consultar a unidade
