@@ -11,5 +11,6 @@ public interface IUserRepository
   public Task<List<User>> FindByType(UserType type);
   public Task<bool> Remove(User user);
   public Task<bool> EmailExists(string email);
-  public Task<bool> HasRegistry();
+  public Task<bool> HasAdmin();
+  public Task<bool> HasDirector();
 }

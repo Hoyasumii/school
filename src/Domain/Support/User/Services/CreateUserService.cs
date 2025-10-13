@@ -2,34 +2,36 @@ using Core.Interfaces;
 using Core.ValueObjects;
 using Domain.Support.User.Dtos;
 using Domain.Support.User.ValueObjects;
+using Domain.Support.UserInvite;
 
 namespace Domain.Support.User.Services;
 
-public sealed class CreateUserService(IUserRepository repository)
+public sealed class CreateUserService(IUserRepository userRepository, IUserInviteRepository userInviteRepository)
 {
-  private IUserRepository Repository { get; } = repository;
+  private readonly IUserInviteRepository UserInvirteRepository = userInviteRepository;
+  private readonly IUserRepository UserRepository = userRepository;
 
-  public async Task<User> Run(IHashing hashing, UserDTO data)
+  public async Task<User> Run(IHashing hashing, CreateUserDTO data)
   {
 
-    var HasRegistry = await Repository.HasRegistry();
+    var invitingUser = await UserRepository.FindById(data.InvitedBy) 
+                        ?? throw new Exception();
+
+    if (invitingUser.Type.Value != Enums.UserType.Admin &&
+      invitingUser.Type.Value != Enums.UserType.Director) 
+      throw new Exception();
+
+    var HasDirector = await UserRepository.HasDirector();
     var newUser = UserFactory.Make(hashing, data);
 
-    if (!HasRegistry)
+    if (!HasDirector)
     {
-      newUser.CreatedBy = GuidVO.Make(newUser.Id.ToString());
       newUser.Type = UserType.Make("Director");
 
       return newUser;
     }
 
-    var targetCreator = await Repository.FindById(data.CreatedBy)
-                        ?? throw new Exception();
 
-    if (targetCreator.Type.Value != Enums.UserType.Director)
-    {
-      throw new Exception();
-    }
 
     return newUser;
   }

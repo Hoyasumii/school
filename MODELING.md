@@ -41,6 +41,7 @@ User {
 UserInvite
 > Responsável por dar a permissão para criar um novo usuário
 - Pode ser criado apenas por diretores e pelo admin
+- O Convite só pode criar Coordenadores, Professores e Alunos
 -->
 
 UserInvite
@@ -66,6 +67,9 @@ User
 [DIRECTOR]
 - Não pode ser removido
 - Pode se tornar Professor ou Coordenador
+[ADMIN]
+- Não pode ser removido
+- Não pode mudar de tipo
 -->
 
 User

@@ -1,0 +1,36 @@
+using Core.Interfaces;
+
+namespace Domain.Support.User.Services;
+
+public sealed class CreateUserAdminService(IHashing hashing, IUserRepository repository)
+{
+  private readonly IUserRepository Repository = repository;
+  private readonly IHashing Hashing = hashing;
+
+  public async Task Run()
+  {
+    var adminUser = UserFactory.Make(Hashing, new()
+    {
+      Address = new()
+      {
+        City = "Aracaju",
+        State = "Sergipe",
+        Neighborhood = "Aeroporto",
+        Number = 97,
+        Street = "Rua ...",
+        ZipCode = "29183718923"
+      },
+      BirthDate = DateTime.Now,
+      Email = "generic-email@school.me",
+      Name = new()
+      {
+        FirstName = "School",
+        LastName = "System"
+      },
+      Password = "Password-123",
+      Type = Enums.UserType.System
+    });
+
+    await Repository.Add(adminUser);
+  }
+}
