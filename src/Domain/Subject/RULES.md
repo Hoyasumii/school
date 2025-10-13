@@ -1,2 +1,0 @@
-- [ ] Apenas Diretores e Coordenadores podem criar uma Matéria
-- [ ] Diretores e Coordenadores podem trocar qualquer dado sobre uma disciplina(exceto o código)

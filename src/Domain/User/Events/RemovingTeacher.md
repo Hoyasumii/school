@@ -1,1 +1,0 @@
-- [ ] Impedir a remoção de um professor quando ele estiver inscrito em uma ou mais turmas
