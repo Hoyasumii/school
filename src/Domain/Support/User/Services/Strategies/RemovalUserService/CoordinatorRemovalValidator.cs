@@ -1,4 +1,4 @@
-using Domain.Course;
+using Domain.Core.Course;
 using Domain.Support.User.Enums;
 using Domain.Support.User.Services.Interfaces;
 

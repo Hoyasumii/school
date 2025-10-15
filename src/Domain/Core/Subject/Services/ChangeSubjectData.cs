@@ -1,12 +1,12 @@
 using Core.ValueObjects;
-using Domain.Subject.Dtos;
+using Domain.Core.Subject.Dtos;
 
-namespace Domain.Subject.Services;
+namespace Domain.Core.Subject.Services;
 
 public sealed class ChangeSubjectData
 {
 
-  public static async Task<Subject> Run(Subject subject, UpdateSubjectDTO data)
+  public static Subject Run(Subject subject, UpdateSubjectDTO data)
   {
     if (data.Name is not null)
       subject.Name = DefinedString.Make(data.Name);

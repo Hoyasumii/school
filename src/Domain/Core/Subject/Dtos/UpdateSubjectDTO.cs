@@ -1,4 +1,4 @@
-namespace Domain.Subject.Dtos;
+namespace Domain.Core.Subject.Dtos;
 
 public sealed record UpdateSubjectDTO
 {

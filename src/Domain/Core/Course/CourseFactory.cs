@@ -1,7 +1,7 @@
 using Core.ValueObjects;
-using Domain.Course.Dtos;
+using Domain.Core.Course.Dtos;
 
-namespace Domain.Course;
+namespace Domain.Core.Course;
 
 public static class CourseFactory
 {

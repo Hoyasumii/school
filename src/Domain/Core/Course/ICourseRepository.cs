@@ -1,4 +1,4 @@
-namespace Domain.Course;
+namespace Domain.Core.Course;
 
 public interface ICourseRepository
 {

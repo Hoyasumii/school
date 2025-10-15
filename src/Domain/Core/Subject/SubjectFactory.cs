@@ -1,7 +1,7 @@
 using Core.ValueObjects;
-using Domain.Subject.Dtos;
+using Domain.Core.Subject.Dtos;
 
-namespace Domain.Subject;
+namespace Domain.Core.Subject;
 
 public static class SubjectFactory
 {
@@ -10,7 +10,9 @@ public static class SubjectFactory
     return new(id, createdAt)
     {
       Description = DefinedString.Make(data.Description),
-      Name = DefinedString.Make(data.Name)
+      Name = DefinedString.Make(data.Name),
+      CourseId = GuidVO.Make(data.CourseId),
+      Active = data.Active
     };
   }
 }

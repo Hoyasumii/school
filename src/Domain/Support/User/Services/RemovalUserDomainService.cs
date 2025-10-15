@@ -2,7 +2,7 @@ using Domain.Support.User.Services.Interfaces;
 
 namespace Domain.Support.User.Services;
 
-public sealed class RemovalUserService(IUserRepository userRepository, IEnumerable<IUserRemovalValidator> validations)
+public sealed class RemovalUserDomainService(IUserRepository userRepository, IEnumerable<IUserRemovalValidator> validations)
 {
   private readonly IUserRepository UserRepository = userRepository;
   private readonly IEnumerable<IUserRemovalValidator> Validations = validations;

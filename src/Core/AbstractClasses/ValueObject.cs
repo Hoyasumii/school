@@ -25,4 +25,10 @@ public abstract class ValueObject<TValue>
 
     RawValue = value;
   }
+
+  public override string ToString()
+  {
+    return Value?.ToString() ?? base.ToString() ?? throw new Exception();
+  }
+
 }

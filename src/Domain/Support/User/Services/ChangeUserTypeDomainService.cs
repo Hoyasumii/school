@@ -2,7 +2,7 @@ using Domain.Support.User.Enums;
 
 namespace Domain.Support.User.Services;
 
-public sealed class ChangeUserTypeService
+public sealed class ChangeUserTypeDomainService
 {
   public static User[] Run(User actor, User user, UserType desiredType)
   {

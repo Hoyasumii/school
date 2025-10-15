@@ -1,7 +1,7 @@
 using Core.AbstractClasses;
 using Core.ValueObjects;
 
-namespace Domain.Course;
+namespace Domain.Core.Course;
 
 public sealed class Course(string? id, DateTime? createdAt) : Entity(id, createdAt)
 {

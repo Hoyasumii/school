@@ -4,7 +4,7 @@ using Domain.Support.User.ValueObjects;
 
 namespace Domain.Support.User.Services;
 
-public sealed class ChangeUserDataService(IUserRepository repository)
+public sealed class ChangeUserDataDomainService(IUserRepository repository)
 {
   private IUserRepository Repository { get; } = repository;
 

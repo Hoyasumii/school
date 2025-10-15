@@ -1,4 +1,3 @@
-using Domain.Support.User.Dtos;
 using Domain.Support.User.Enums;
 
 namespace Domain.Support.User;

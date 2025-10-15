@@ -1,4 +1,4 @@
-namespace Domain.Course.Dtos;
+namespace Domain.Core.Course.Dtos;
 
 public sealed record CourseDTO
 {
